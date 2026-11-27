@@ -2,6 +2,11 @@
 * 作者       版本
 * SZQ2268    V.1.0.0
 */
+/*默认文本排列优先级: 0
+* 顶栏优先级: 20
+* 最高不可过100！！！
+* 每次变动必须修改注释！！！
+*/
 * {
     padding: 0;
     margin: 0;
@@ -9,10 +14,12 @@
 
 /* 颜色变量 */
 :root {
-    --background-color: #333;
-    --title-text-color: #eee;
-    --text-color: #ddd;
-    --link-color: #44d;
+    --background-color: #333;  /* 背景颜色 */
+    --card-background-color: #444;  /* 卡片背景色 */
+    --title-text-color: #eee;  /* 标题颜色 */
+    --text-color: #ddd;  /* 文字颜色 */
+    --link-color: #44d;  /* 蓝色链接颜色 */
+    --footer-color: #999;  /* 页脚文字颜色 */
 }
 
 
@@ -23,7 +30,7 @@ body {
 h1, h2, h3 {
     color: var(--title-text-color);
 }
-p {
+p, li {
     color:var(--text-color);
 }
 a {
@@ -32,20 +39,43 @@ a {
 
 /* 各个区域定制 */
 /* 导航栏 */
+nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+}
 nav, nav ul {
     display: flex;
 }
 nav ul {
-    text-align: right;
     list-style-type: none;
 }
 nav a {
     text-decoration: none;
+    color:var(--text-color);
 }
 /* 内容 */
-.home h1 {
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .card h2, .card h3 {
     text-decoration: underline 3px;
     text-underline-offset: 4px;
+}
+.about_persion {
+    display: flex;
+    padding: 2rem;
+    width: 20rem;
+    flex-direction: column;
+}
+.about_persion li {
+    background-color: var(--card-background-color);
+    border: solid;
+}
+footer {
+    color: var(--footer-color);
+    text-align: center;
 }
