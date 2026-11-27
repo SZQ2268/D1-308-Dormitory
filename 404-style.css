@@ -1,0 +1,41 @@
+/*404-STYLE.CSS文件
+* 作者       版本
+* SZQ2268    V.1.0.0
+*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 颜色变量 */
+:root {
+    --background-color: #333;
+    --title-text-color: #eee;
+    --text-color: #ddd;
+    --link-color: #44d;
+}
+
+/* 各个元素定义 */
+body {
+    background-color: var(--background-color);
+}
+h1, h2, h3 {
+    color: var(--title-text-color);
+}
+p {
+    color:var(--text-color);
+}
+a {
+    color:var(--link-color);
+}
+
+/* 针对错误页面的改良 */
+body {
+    margin: 5rem;
+}
+h1 {
+    font-size: 5rem;
+}
+.phrase::first-letter {
+    font-size: 1.5rem;
+}
